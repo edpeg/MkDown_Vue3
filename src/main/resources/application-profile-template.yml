@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/mkdown?serverTimezone=GMT%2B8&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: xxx
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: xxx
+
+es:
+  url: localhost
+  port: 9200
+  user: elastic
+  password: xxx
+
+# 七牛云配置
+qiniu-store:
+  access-key: xxx
+  secret-key: xxx
+  bucket: xxx
+
+# 本地上传文件配置
+local-store:
+  # 图片上传路径   nginx或caddy代理路径要保持一致
+  path: xxx
+  # 文件访问路径   upload  img 简称ui
+  url-prefix: /ui/

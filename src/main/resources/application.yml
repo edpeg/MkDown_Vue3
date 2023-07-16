@@ -1,0 +1,43 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: @activatedYml@
+  messages:
+    basename: messages
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    redis:
+      timeout: 5000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+
+# 使用哪个配置上传文件
+# 0：七牛云上传  1：本地上传
+file-upload:
+  single-file-size: 20
+  total-file-size: 40
+  picturebed: 1
+
+# Session配置
+session:
+  # 30*24*60*60
+  cookie-max-age: 2592000
+
+mybatis-plus:
+  mapper-locations:  classpath:/Mapper/**/*Mapper.xml
+  type-aliases-package: top.openfbi.mdnote.*.model
+  configuration:
+    jdbc-type-for-null: 'null'
+    call-setters-on-nulls: true
+
+logging:
+  #  config: logback-spring.xml
+  level:
+    #对应包下的日志级别
+    top.openfbi.mdnote: DEBUG
