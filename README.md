@@ -1,8 +1,8 @@
-# MorkDown笔记系统 ——后端
+# MarkDown笔记系统 ——后端
 
 [前端链接](https://github.com/edpeg/mdnote_vue.git)
 
-## MorkDown笔记系统简介
+## MarkDown笔记系统简介
 
 * 类似有道云笔记的一个Markdown格式笔记系统，使用前后端分离设计。
 * 支持图片的本地上传与七牛云上传两种方式
