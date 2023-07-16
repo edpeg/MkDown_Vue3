@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost/mkdown?serverTimezone=GMT%2B8&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://localhost/mdnote?serverTimezone=GMT%2B8&characterEncoding=UTF-8&allowMultiQueries=true
     username: root
     password: xxx
   data:

@@ -10,7 +10,7 @@
 
 ## 编译运行
 
-1. 创建MySQL数据库`mkdown`,导入表结构 `sql/mkdown.sql`
+1. 创建MySQL数据库`mdnote`,导入表结构 `sql/mdnote.sql`
 2. 替换application-profile-template.yml里的mysql、redis、es、七牛云等配置参数
 3. maven编译运行 `mvn spring-boot:run`
 

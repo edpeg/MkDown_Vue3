@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication()
 @MapperScan(basePackages = { "top.openfbi.mdnote.*.dao" })
-public class MkDownJavaApplication {
+public class MdnoteApplication {
     public static void main(String[] args) {
         try {
-            SpringApplication.run(MkDownJavaApplication.class, args);
+            SpringApplication.run(MdnoteApplication.class, args);
         } catch (Exception e) {
             e.printStackTrace();
         }
