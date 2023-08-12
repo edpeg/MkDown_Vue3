@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import top.openfbi.mdnote.common.ResultStatus;
 import top.openfbi.mdnote.common.exception.ResultException;
 import top.openfbi.mdnote.config.ResponseResultBody;
 import top.openfbi.mdnote.note.model.Note;
@@ -58,8 +59,15 @@ public class NoteController {
      */
     @ResponseBody
     @GetMapping("/delete")
-    public void delete(Long id) throws ResultException {
-        noteService.delete(id, Session.getUser().getId());
+    public void delete(String id) throws ResultException {
+        Long idl = null;
+        try{
+            idl = Long.parseLong(id);
+        }catch (NumberFormatException e){
+            logger.info("笔记ID输入错误,错误ID为: {}",id);
+            throw new ResultException(ResultStatus.NOTE_ID_NOT_EXIST);
+        }
+        noteService.delete(idl, Session.getUser().getId());
     }
 
     /**
@@ -67,8 +75,15 @@ public class NoteController {
      */
     @ResponseBody
     @GetMapping("/info")
-    public SimpleNote info(Long id) throws ResultException {
-        Note note = noteService.info(id, Session.getUser().getId());
+    public SimpleNote info(String id) throws ResultException {
+        Long idl = null;
+        try{
+            idl = Long.parseLong(id);
+        }catch (NumberFormatException e){
+            logger.info("笔记ID输入错误,错误ID为: {}",id);
+            throw new ResultException(ResultStatus.NOTE_ID_NOT_EXIST);
+        }
+        Note note = noteService.info(idl, Session.getUser().getId());
         return new SimpleNote(note);
     }
 
